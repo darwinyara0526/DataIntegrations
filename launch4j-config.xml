@@ -1,0 +1,19 @@
+<launch4jConfig>
+    <dontWrapJar>false</dontWrapJar>
+    <headerType>gui</headerType>
+    <jar>target/DataIntegrations-1.0-SNAPSHOT.jar</jar> 
+    <outfile>DataIntegrations.exe</outfile>
+    <mainClass>com.mycompany.dataintegrations.MainApp</mainClass>
+    <bundledJrePath>jre</bundledJrePath> <!-- Usará el JRE empaquetado con jlink -->
+    <jre>
+        <minVersion>21</minVersion>
+        <runtimeBits>64</runtimeBits> <!-- Asegura que se use JRE de 64 bits -->
+    </jre>
+    <cmdLine></cmdLine> <!-- Opcional, puedes agregar parámetros extra si es necesario -->
+    <chdir>.</chdir> <!-- Directorio de trabajo -->
+    <priority>normal</priority>
+    <stayAlive>false</stayAlive>
+    <manifest>
+        <mainClass>com.mycompany.dataintegrations.MainApp</mainClass>
+    </manifest>
+</launch4jConfig>

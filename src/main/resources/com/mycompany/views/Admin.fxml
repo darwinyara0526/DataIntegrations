@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mycompany.gui.controllers.AdminController"
+            stylesheets="@/com/mycompany/styles/admin.css">
+
+    <!-- Menú Superior -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS"
+              styleClass="menu-superior">
+            <Label fx:id="nombreAdminLabel" text="Admin" styleClass="texto-menu"/>
+            <Label fx:id="areaLabel" text="Área: TI" styleClass="texto-menu"/>
+            <Button text="Cerrar Sesión" styleClass="boton-cerrar" onAction="#cerrarSesion"/>
+        </HBox>
+    </top>
+
+    <!-- Menú de Navegación (Izquierda) -->
+    <left>
+        <VBox spacing="15" alignment="TOP_CENTER" VBox.vgrow="ALWAYS"
+              styleClass="menu-lateral">
+            <Label text="Panel de Administración" styleClass="titulo-menu"/>
+            <Button text="Gestionar Usuarios" styleClass="boton-menu"/>
+            <Button text="Ver Reportes" styleClass="boton-menu"/>
+            <Button text="Ajustes del Sistema" styleClass="boton-menu"/>
+            <Button text="Agregar Base de Datos" styleClass="boton-menu" onAction="#abrirConexionBD"/>
+
+            <!-- Contenedor de configuraciones JSON -->
+            <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-configs">
+                <VBox fx:id="contenedorConfigs" spacing="10" alignment="TOP_CENTER"
+                      styleClass="contenedor-configs"/>
+            </ScrollPane>
+
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS"
+              styleClass="contenido-principal">
+
+            <!-- Título principal -->
+            <Label text="Proceso de Integración" styleClass="titulo-principal"/>
+
+            <!-- Contenedor para las dos zonas de arrastre -->
+            <HBox spacing="40" alignment="CENTER" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+
+                <!-- Zona de arrastre de archivos (izquierda) -->
+                <VBox fx:id="zonaArrastre" spacing="10" alignment="CENTER"
+                      styleClass="zona-arrastre">
+                    <Label text="Arrastre los datos aquí" styleClass="texto-arrastre"/>
+                </VBox>
+
+                <!-- Zona de arrastre de archivos (derecha) -->
+                <VBox fx:id="zonaArrastre2" spacing="10" alignment="CENTER"
+                      styleClass="zona-arrastre">
+                    <Label text="Arrastre los datos aquí" styleClass="texto-arrastre"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- Seguimiento de integración -->
+            <VBox spacing="10" alignment="CENTER">
+                <Label text="Seguimiento de Integración" styleClass="titulo-bloque"/>
+                <ProgressBar fx:id="progresoIntegracion" styleClass="barra-progreso"/>
+            </VBox>
+
+            <!-- Botón de integración -->
+            <Button text="Iniciar Integración" fx:id="botonIntegrar"
+                    styleClass="boton-integrar" onAction="#iniciarIntegracion"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>
