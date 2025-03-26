@@ -274,5 +274,8 @@ public class R2RMLGenerator {
         typeMap.put("ENTITIES", "xsd:ENTITIES");
 
         return typeMap.getOrDefault(sqlType, "xsd:string"); // Si el tipo no está mapeado, usar string por defecto
+        
+        
+        
     }
 }

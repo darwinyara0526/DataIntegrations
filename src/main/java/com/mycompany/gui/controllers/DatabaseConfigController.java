@@ -100,7 +100,7 @@ public class DatabaseConfigController {
             hostField.setText("Localhost");
             usuarioField.setText("postgres");
             passwordField.setText("1familiayara");
-            nombreBDField.setText("autos_db");
+            nombreBDField.setText("compras");
         }
     }
 
